@@ -1,0 +1,13 @@
+name = "FisherMetrics"
+uuid = "42d7efc9-9259-4920-a7c0-d47826b5c180"
+authors = ["Alex <ap.browning@qut.edu.au> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
