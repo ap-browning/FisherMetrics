@@ -1,6 +1,7 @@
 module FisherMetrics
 
-using Manifolds, ManifoldsBase
+using Manifolds
+using ManifoldsBase
 using Distributions
 using Optim
 using OrdinaryDiffEq
