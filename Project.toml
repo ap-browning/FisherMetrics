@@ -3,6 +3,14 @@ uuid = "42d7efc9-9259-4920-a7c0-d47826b5c180"
 authors = ["Alex <ap.browning@qut.edu.au> and contributors"]
 version = "0.1.0"
 
+[deps]
+BlockDiagonals = "0a1fb500-61f7-11e9-3c65-f5ef3456f9f0"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+Manifolds = "1cead3c2-87b3-11e9-0ccd-23c62b72b94e"
+ManifoldsBase = "3362f125-f0bb-47a3-aa74-596ffd7ef2fb"
+Optim = "429524aa-4258-5aef-a3af-852621145aeb"
+OrdinaryDiffEq = "1dea7af3-3e70-54e6-95c3-0bf5283fa5ed"
+
 [compat]
 julia = "1"
 
