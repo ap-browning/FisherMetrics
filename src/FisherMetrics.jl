@@ -16,6 +16,6 @@ include("fisher_information.jl")
 # Fisher metric
 include("fisher_metrics.jl")
 
-export fim, FisherMetricManifold, default_basis
+export fim, FisherMetricManifold, default_basis, TransformedDistribution, MultiplicativeNormal
 
 end
