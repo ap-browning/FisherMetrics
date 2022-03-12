@@ -6,12 +6,14 @@ struct TransformedDistribution <: ContinuousUnivariateDistribution
     θ::Vector
     d::Distribution
     f::Function
-    TransformedDistribution(θ::Vector,d,f::Function) = new(θ,d(f(θ)...),f)
+    params::Tuple
+    TransformedDistribution(θ::Vector,d::Function,f::Function;params=Symbol(["p$i" for i in 1:length(θ)])) = new(θ,d(f(θ)),f,params)
 end
+Base.fieldnames(d::TransformedDistribution) = d.params
 Distributions.params(d::TransformedDistribution) = d.θ
 Base.rand(d::TransformedDistribution) = rand(d.d)
 Base.rand(d::TransformedDistribution,n::Int) = rand(d.d,n)
-MultiplicativeNormal(μ::Number,ν::Number) = TransformedDistribution([μ,ν],Normal,θ -> [θ[1];θ[1]*θ[2]])
+MultiplicativeNormal(μ::Number,ν::Number) = TransformedDistribution([μ,ν],p -> Normal(p...),θ -> [θ[1];θ[1]*θ[2]],params=(:μ,:ν))
 
 function fim(d::Normal)
     μ,σ = params(d)
