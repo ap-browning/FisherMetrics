@@ -26,7 +26,7 @@ function fim(d::Beta)
 end
 function fim(d::Gamma)
     α,θ = params(d);
-    [polygamma(1,α) θ; θ  α*θ^2]
+    [polygamma(1,α) 1 / θ; 1 / θ  α / θ^2]
 end
 function fim(d::TransformedDistribution)
     J = ForwardDiff.jacobian(d.f,d.θ)
